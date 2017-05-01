@@ -77,7 +77,10 @@
 						$('.start').hide();
 						$('.error').hide();
 						$('html,body').scrollTop(0);
-				   $('#submit').hide();
+					$('section#content div:nth-of-type(1)').hide();
+				   $('form').hide();
+				   $('section#content div:nth-of-type(2)').show();
+				   $('section#content div:nth-of-type(3), div:nth-of-type(4)').show();
 							fbq('track', 'Lead');
 							ga('send', 'event', 'Signup', 'Converted');
 						}
@@ -91,7 +94,7 @@
 				results = regex.exec(location.search);
 				return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 			}
-			$("#source").val(getParameterByName("source") ? getParameterByName("source") : "homepage");
+			$("#source").val(getParameterByName("source"));
 			var sourcestring = encodeURIComponent($('#source').val());
 			$("#fname").val(getParameterByName("fname"));
 			$("#lname").val(getParameterByName("lname"));
@@ -108,9 +111,8 @@
 	<header>
 		<h1><span>#</span>Knock<span>Every</span>Door</h1>
 		<ul>
-			<li><a href="https://actionnetwork.org/event_campaigns/knockeverydoor" target="_blank">Find an Event</a></li>
 			<li><a href="#faq">FAQ</a></li>
-			<li><a href="https://secure.actblue.com/contribute/page/kedthanks?refcode=homepage">Contribute</a></li>
+			<li><a href="https://secure.actblue.com/contribute/page/knockeverydoor?refcode=homepage">Contribute</a></li>
 			<div class="clear"></div>
 		</ul>
 		<hr>
@@ -120,7 +122,7 @@
 		<div>
 			<h1 id="title">Join the movement to knock every door and take back our democracy.</h1>
 			<hr align="left">
-			<p id="pitch">We’re launching nationwide, volunteer-led canvasses to organize our communities against Trump. Sign up to canvass where you live and invite your friends to get involved, especially if you live in a county that flipped from Obama in 2012 to Trump in 2016. Once you sign up to canvass, you can read our door knocking guide <a href="https://docs.google.com/document/d/1_gidKOWgGtYDRjNOV0oRjOG4STf-MjVXGXdpiDSAVVM/edit?usp=sharing">here</a> and register for a volunteer orientation call <a href="https://docs.google.com/document/d/1NcxjEoHqwLsYqzogXgtb0N3QWdm9Rd6yN37el0dNxao/edit?usp=sharing">here</a>.</p>
+			<p id="pitch">We’re launching nationwide, volunteer-led canvasses to organize our communities against Trump, starting right after the inauguration protests on January 21. Sign up to canvass where you live and invite your friends to get involved, especially if you live in a county that flipped from Obama in 2012 to Trump in 2016. We’ll follow up shortly with more details on how to host or join a canvassing team in your community.</p>
 			<h3>Signup today to join the effort &rarr;</h3>
 			<div class="clear"></div>
 		</div>
@@ -143,7 +145,7 @@
 			</p>
 		  <div class="clear"></div>
 		</div>
-      <form action method="post" target="no-target" onsubmit="submitted=true;" autocomplete="on">
+		<form target="no-target" action method="post" autocomplete="on">
 			<h2>Let's knock some doors!</h2>
 			<p class="error">Please fill out all the form fields correctly.</p>
 			<input name="fname" id="fname" autocomplete="given-name" type="text" placeholder="First name" required>
@@ -152,8 +154,7 @@
 			<input type="email" autocapitalize="off" autocorrect="off" id="email" name="email" placeholder="Email address" autocomplete="email" required />
 			<input type="text" id="zip" name="zip" placeholder="Zip code" inputmode="numeric" pattern="(\d{5}([\-]\d{4})?)" maxlength="5" autocomplete="postal-code" required />
 			<input id="source" name="source" type="hidden" value="">
-			<iframe src="#" id="no-target" name="no-target" style="visibility:hidden;display:none;"      
-onload="if(submitted) {window.location='https://secure.actblue.com/contribute/page/kedthanks?refcode=homepage';}"></iframe>
+			<iframe src="#" id="no-target" name="no-target" style="visibility:hidden;display:none;"></iframe>
 			<input type="submit" id="submit" name="submit" value="Count me in" />
 			<div class="clear"></div>
 		</form>
@@ -170,10 +171,10 @@ onload="if(submitted) {window.location='https://secure.actblue.com/contribute/pa
 				<p>Send an email</p>
 				<p>Click the button below to send an email or copy and paste from the box.</p>
 				<span class="icon-envelop"></span>
-				<a href="mailto:?Subject=Knock%20some%20doors%20with%20me%21&Body=Hey%20I%20just%20signed%20up%20to%20join%20this%20project%20called%20Knock%20Every%20Door.%20We%27re%20launching%20nationwide%2C%20volunteer-led%20canvasses%20to%20organize%20our%20communities%20against%20Trump.%20Want%20to%20join%20me%3F%0A%0Ahttp%3A//knockeverydoor.org/%3Fsource%3Dshareemail"><span class="icon-envelop"></span>Send an email</a>
+				<a href="mailto:?Subject=Knock%20some%20doors%20with%20me%21&Body=Hey%20I%20just%20signed%20up%20to%20join%20this%20project%20called%20Knock%20Every%20Door.%20We%27re%20launching%20nationwide%2C%20volunteer-led%20canvasses%20to%20organize%20our%20communities%20against%20Trump%2C%20starting%20right%20after%20the%20inauguration%20on%20January%2020.%20Want%20to%20join%20me%3F%0A%0Ahttp%3A//knockeverydoor.org/%3Fsource%3Dshareemail"><span class="icon-envelop"></span>Send an email</a>
 				<textarea class="emailtext" onclick="this.focus();this.select()">Subject: Knock some doors with me!
 				
-Hey I just signed up to join this project called Knock Every Door. We're launching nationwide, volunteer-led canvasses to organize our communities against Trump. Want to join me?
+Hey I just signed up to join this project called Knock Every Door. We're launching nationwide, volunteer-led canvasses to organize our communities against Trump, starting right after the inauguration protests on January 21. Want to join me?
 
 https://knockeverydoor.org/?source=shareemail</textarea>
 			</sidebar>
@@ -185,21 +186,15 @@ https://knockeverydoor.org/?source=shareemail</textarea>
 		<div class="faqitem">
 <h3>So...what&rsquo;s the plan?</h3>
 
-<p><strong>We’re organizing against Trump and the Republican agenda.</strong></p>
+<p>We&rsquo;re launching nationwide, door-to-door canvasses to organize our communities against Trump, starting right after the inauguration on January 20.</p>
 
-<p><strong>Our goal is to build a massive, grassroots, volunteer-led movement to take our democracy back.</strong> More Americans oppose Trump than support him. By organizing and working together, we can give our voices and our power a multiplier effect. </p>
-
-<p>In the 2016 elections, the Democratic party failed progressives by failing to organize at scale the kind of face-to-face conversations between volunteers and voters that can help identify and persuade the voters we needed to defeat Trump.</p>
-
-<p>Our first step: We’re currently conducting nationwide, door-to-door canvasses to start conversations that should have been happening before the election and that simply can’t wait until 2018. We’re going to listen to voters and non-voters alike, and in the process help organize our communities against Trump. </p>
+<p>In the 2016 elections, Democrats fell short when it came to organizing the kind of face to face conversations between volunteers and voters that can help identify and persuade the voters we needed to defeat Trump. Our goal is to start building a truly massive, grassroots, volunteer-led movement to listen to voters (and nonvoters, too) and start the long hard work of taking our democracy back. </p>
 
 <p>Many of us are already signing petitions, donating money, and even protesting and going to jail. But we also have to get to work to talk to our neighbors one at a time, knock on every door, and identify who is with us, who we can persuade to join us, and who is definitely on the other side.</p>
 
-<p>As we have conversations with our neighbors, we’ll learn more about why Democratic candidates lost in 2016 – and how we can hone our organizing strategies and tactics to win in the 2018 midterms and in 2020.</p>
+<p>As we have conversations with our neighbors, we&rsquo;ll learn a lot about why the Democrats lost in 2016 – and how we can hone our organizing strategies and tactics to win in the 2018 midterms and in 2020. We&rsquo;ll compile what we learn into a report and share it with reporters and Democratic Party leaders.</p>
 
-<p>Leaders in both parties, along with the media, need to hear what voters all across the country are saying about the challenges they face, whether policies meant to help people are truly improving their daily lives, and what they are looking for in their elected leaders. By talking to voters and focusing on listening and understanding, we’ll be able to communicate the stories, concerns and hopes that the establishment politicians and media either missed or ignored in this past election. At the same time, we’ll be building a huge database of voters, their contact information, and information about whether they’re willing to help us fight Trump. We’ll call those people back or send them a text message and ask them to get involved in other big organizing projects to push Democrats to stand up to Trump, defeat Republicans (and corporate Democrats!) at the ballot box, and, ultimately, crush Trump in 2020.</p>
-
-<p>Note, we’re not the Democratic party and we’re not collecting information on the party’s behalf. We’re concerned volunteers who are getting to work to address some pretty obvious problems with how our electoral democracy is functioning. We hope political leaders and the media come to their senses. But we’re not waiting for someone else to lead. The work starts now and if not by us by whom?</p>
+<p>Meanwhile, we&rsquo;ll be building a huge database of voters, their contact information, and information about whether they&rsquo;re willing to help us fight Trump. We&rsquo;ll call those people back or send them a text message and ask them to get involved in other big organizing projects to push Democrats to stand up to Trump, defeat Republicans (and maybe some corporate Democrats!) at the ballot box, and, ultimately, crush Trump in 2020.</p>
 </div>
 
 <div class="faqitem">

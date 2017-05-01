@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Knock Every Door</title>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="../style.css" rel="stylesheet" type="text/css">
+	<meta name="Description" CONTENT="We’re launching nationwide, volunteer-led canvasses to organize our communities against Trump.">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Join the movement to knock every door and take back our democracy." />
+    <meta property="og:url" content="https://knockeverydoor.org/quick" />
+    <meta property="og:image" content="https://s3.amazonaws.com/knockeverydoor.org/images/social2.png" />
+    <meta property="og:description" content="We’re launching nationwide, volunteer-led canvasses to organize our communities against Trump." />
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@ZackMalitz">
+	<meta name="twitter:creator" content="@ZackMalitz">
+	<meta name="twitter:title" content="Join the movement to knock every door and take back our democracy.">
+	<meta name="twitter:description" content="We’re launching nationwide, volunteer-led canvasses to organize our communities against Trump.">
+	<meta name="twitter:image" content="https://s3.amazonaws.com/knockeverydoor.org/images/social2.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.3.1/jquery.placeholder.min.js"></script>
+	<script src="../jquery.osdi.min.js"></script>
+	<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '1338370492872008'); // Insert your pixel ID here.
+	fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=1338370492872008&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- DO NOT MODIFY -->
+	<!-- End Facebook Pixel Code -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-83432953-15', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('input').placeholder();
+			$('form').on('submit',function(){
+				var has_empty = false;
+			   $(this).find( 'input[type!="hidden"]' ).each(function () {
+				  if ( ! $(this).val() ) { has_empty = true; return false; }
+			   });
+			   if ( has_empty ) {
+				   $('section#content form .error').show();
+				   return false;
+			   } else {
+					var inputq1 = encodeURIComponent($('#fname').val());
+				   	var inputq2 = encodeURIComponent($('#lname').val());
+				   	var inputq3 = encodeURIComponent($('#phone').val());
+					var inputq4 = encodeURIComponent($('#email').val());
+				   	var inputq5 = encodeURIComponent($('#zip').val());
+					var inputq7 = encodeURIComponent($('#source').val());
+					var q1ID = "entry.2020702250";
+					var q2ID = "entry.1509120636";
+					var q3ID = "entry.434007560";
+					var q4ID = "entry.1631344322";
+					var q5ID = "entry.134615433";
+					var q7ID = "entry.60866946";
+					var baseURL = 'https://docs.google.com/a/middleseat.co/forms/d/e/1FAIpQLSc-hqp-i_fMlWt00aLx7McD7xX3RZSSHKl7W5_ygnrH_vdklA/formResponse?';
+					var submitRef = '&submit=Submit';
+					var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 + "&" + q3ID + "=" + inputq3 +  "&" + q4ID + "=" + inputq4 +  "&" + q5ID + "=" + inputq5 + "&" + q7ID + "=" + inputq7 + submitRef);
+
+				  $('#signup-form').osdi({
+				    endpoint: "https://actionnetwork.org/api/v2/forms/3d98a2bf-a9c1-41bc-b699-c3312ed72cea/submissions",
+				    body: function() {
+				      return {
+						  "person" : {
+						    "family_name" : $('#lname').val(),
+						    "given_name" : $('#fname').val(),
+						    "postal_addresses" : [ 
+						      { 
+						        "postal_code" : $('#zip').val(),
+						      }
+						    ],
+						    "email_addresses" : [ 
+						      { 
+						        "address" : $('#email').val(),
+						        "status" : "subscribed"
+						      }
+						    ],
+						    "custom_fields": {
+							  "Mobile number": $('#phone').val(),
+							  "Source": $('#source').val()
+						    }
+						  },
+						  "add_tags": [
+						    "Website signup",
+						    "Website signup - quick"
+						  ],
+						  "triggers": {
+						    "autoresponse": {
+						      "enabled": true
+						    }
+						  }
+				      }
+				    },
+				    immediate: true,
+				    done: function(data, textStatus, jqXHR) {
+					    console.log('done');
+						$('.start').hide();
+						$('.error').hide(); 
+						$('html,body').scrollTop(0);
+						$('section#content div:nth-of-type(1)').hide();
+						$('form').hide();
+						$('section#content div:nth-of-type(2)').show();
+						$('section#content div:nth-of-type(3), div:nth-of-type(4)').show();
+						fbq('track', 'Lead');
+						ga('send', 'event', 'Signup', 'Converted'); 
+						console.log(submitURL);
+						$.post(submitURL);
+				    },
+				    fail: function(jqXHR, textStatus, errorThrown) {
+				      console.log('fail');
+				    },
+				    always: function(data_jqXHR, textStatus, jqXHR_errorThrown) {
+				    	console.log('always');
+				    }
+				  });
+						}
+			});
+		});
+		$(document).ready(function()
+		{
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+				results = regex.exec(location.search);
+				return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			$("#source").val(getParameterByName("source") ? getParameterByName("source") : "quick");
+			var sourcestring = encodeURIComponent($('#source').val());
+			$("#fname").val(getParameterByName("fname"));
+			$("#lname").val(getParameterByName("lname"));
+			$("#phone").val(getParameterByName("phone"));
+			$("#email").val(getParameterByName("email"));
+			$("#zip").val(getParameterByName("zip"));
+		});
+
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1><span>#</span>Knock<span>Every</span>Door</h1>
+		<ul>
+			<li><a href="https://map.knockeverydoor.org/" target="_blank">Find an Event</a></li>
+<!--			<li><a href="https://secure.actblue.com/contribute/page/kedthanks?refcode=quick">Contribute</a></li> -->
+			<div class="clear"></div>
+		</ul>
+		<hr>
+		<div class="clear"></div>
+	</header>
+	<section id="content">
+		<div>
+			<h1 id="title">Join the movement to knock every door and take back our democracy.</h1>
+			<hr align="left">
+			<p id="pitch">We’re launching nationwide, volunteer-led canvasses to organize our communities against Trump. Sign up to canvass where you live and invite your friends to get involved, especially if you live in a county that flipped from Obama in 2012 to Trump in 2016.</p></p>
+			<h3>Signup today to join the effort &rarr;</h3>
+			<div class="clear"></div>
+		</div>
+		<div>
+			<h1>Thank you for joining us. Here's what you can do now:</h1>
+			<hr align="left">
+		  <p>
+				<ol>
+					<li><strong>Spread the word on Facebook<span class="nomobile">&nbsp;and send out an email</span>.</strong> For every one person who shares our website, we add an average of three new door knockers to our movement!
+						<a class="mobilelink" href="https://www.facebook.com/sharer/sharer.php?u=https://knockeverydoor.org/quick?source=sharefbquick">Post to your Facebook wall &rarr;</a>
+					</li>
+					<li> <a target="_blank" href="https://docs.google.com/a/middleseat.co/forms/d/e/1FAIpQLSenXREvYIm9os4V_T5_Acai1eZwFcjPNzz97QTqz3NH8pn2fA/viewform">Join a special volunteer team.</a> We’re counting on lots of volunteers to take on key roles and do the kind of work that normal organizations only let staff do. </li>
+					<li>
+						<a target="_blank" href="https://secure.actblue.com/contribute/page/knockeverydoor?refcode=quick">Donate $27 or whatever you can afford to fund this project.</a>
+					</li>
+					<li>
+						<strong>Join a new volunteer call and find out how to get to work.</strong> <a target="_blank" href="https://docs.google.com/document/d/1NcxjEoHqwLsYqzogXgtb0N3QWdm9Rd6yN37el0dNxao/edit?usp=sharing">Click here to see all upcoming calls.</a>
+					</li>
+				</ol>
+			</p>
+		  <div class="clear"></div>
+		</div>
+		<form id="signup-form" action="/" method="post" target="no-target" onsubmit="submitted=true;" autocomplete="on">
+ <!--      <form action method="post" target="no-target" onsubmit="submitted=true;" autocomplete="on"> -->
+			<h2>Let's knock some doors!</h2>
+			<p class="error">Please fill out all the form fields correctly.</p>
+			<input name="fname" id="fname" autocomplete="given-name" type="text" placeholder="First name" required>
+			<input name="lname" id="lname" autocomplete="family-name" type="text" placeholder="Last name" required>
+			<input name="phone" id="phone" autocomplete="tel-national" type="tel" placeholder="Mobile phone" inputmode="numeric" required>
+			<input type="email" autocapitalize="off" autocorrect="off" id="email" name="email" placeholder="Email address" autocomplete="email" required />
+			<input type="text" id="zip" name="zip" placeholder="Zip code" inputmode="numeric" pattern="(\d{5}([\-]\d{4})?)" maxlength="5" autocomplete="postal-code" required />
+			<input id="source" name="source" type="hidden" value="">
+			<iframe src="#" id="no-target" name="no-target" style="visibility:hidden;display:none;"></iframe>
+			<input type="submit" id="submit" name="submit" value="Count me in" />
+			<div class="clear"></div>
+		</form>
+		<div>
+			<sidebar class="facebook">
+				<p>Share on Facebook</p>
+				<p>Click the button below to post a link to Facebook:</p>
+				<span class="icon-facebook"></span>
+				<a href="https://www.facebook.com/sharer/sharer.php?u=https://knockeverydoor.org/quick?source=sharefbquick"><span class="icon-facebook"></span>Share on Facebook</a>
+			</sidebar>
+		</div>
+		<div>
+			<sidebar class="email">
+				<p>Send an email</p>
+				<p>Click the button below to send an email or copy and paste from the box.</p>
+				<span class="icon-envelop"></span>
+				<a href="mailto:?Subject=Knock%20some%20doors%20with%20me%21&Body=Hey%20I%20just%20signed%20up%20to%20join%20this%20project%20called%20Knock%20Every%20Door.%20We%27re%20launching%20nationwide%2C%20volunteer-led%20canvasses%20to%20organize%20our%20communities%20against%20Trump.%20Want%20to%20join%20me%3F%0A%0Ahttp%3A//knockeverydoor.org/quick%3Fsource%3Dshareemailquick"><span class="icon-envelop"></span>Send an email</a>
+				<textarea class="emailtext" onclick="this.focus();this.select()">Subject: Knock some doors with me!
+				
+Hey I just signed up to join this project called Knock Every Door. We're launching nationwide, volunteer-led canvasses to organize our communities against Trump. Want to join me?
+
+https://knockeverydoor.org/quick?source=shareemailquick</textarea>
+			</sidebar>
+		</div>
+		<div class="clear"></div>
+	</section>
+	<footer>
+		<p>Paid for by Up PAC and not authorized by any candidate or candidate's committee.</p>
+		<a href="../privacy-policy/index.html">Privacy Policy</a>
+	</footer>
+</body>
+</html>

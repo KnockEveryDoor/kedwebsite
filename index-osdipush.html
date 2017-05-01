@@ -20,6 +20,7 @@
 	<meta name="twitter:image" content="https://s3.amazonaws.com/knockeverydoor.org/images/social2.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.3.1/jquery.placeholder.min.js"></script>
+	<script src="jquery.osdi.min.js"></script>
 	<!-- Facebook Pixel Code -->
 	<script>
 	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -63,25 +64,67 @@
 					var inputq4 = encodeURIComponent($('#email').val());
 				   	var inputq5 = encodeURIComponent($('#zip').val());
 					var inputq7 = encodeURIComponent($('#source').val());
-				   var q1ID = "entry.2020702250";
-				   var q2ID = "entry.1509120636";
-				   var q3ID = "entry.434007560";
+					var q1ID = "entry.2020702250";
+					var q2ID = "entry.1509120636";
+					var q3ID = "entry.434007560";
 					var q4ID = "entry.1631344322";
 					var q5ID = "entry.134615433";
 					var q7ID = "entry.60866946";
 					var baseURL = 'https://docs.google.com/a/middleseat.co/forms/d/e/1FAIpQLSc-hqp-i_fMlWt00aLx7McD7xX3RZSSHKl7W5_ygnrH_vdklA/formResponse?';
 					var submitRef = '&submit=Submit';
 					var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 + "&" + q3ID + "=" + inputq3 +  "&" + q4ID + "=" + inputq4 +  "&" + q5ID + "=" + inputq5 + "&" + q7ID + "=" + inputq7 + submitRef);
-					console.log(submitURL);
-					$(this)[0].action=submitURL;
-						$('.start').hide();
-						$('.error').hide();
-						$('html,body').scrollTop(0);
-				   $('#submit').hide();
-							fbq('track', 'Lead');
-							ga('send', 'event', 'Signup', 'Converted');
+
+				  $('#signup-form').osdi({
+				    endpoint: "https://actionnetwork.org/api/v2/forms/3d98a2bf-a9c1-41bc-b699-c3312ed72cea/submissions",
+				    body: function() {
+				      return {
+						  "person" : {
+						    "family_name" : $('#lname').val(),
+						    "given_name" : $('#fname').val(),
+						    "postal_addresses" : [ 
+						      { 
+						        "postal_code" : $('#zip').val(),
+						      }
+						    ],
+						    "email_addresses" : [ 
+						      { 
+						        "address" : $('#email').val(),
+						        "status" : "subscribed"
+						      }
+						    ],
+						    "custom_fields": {
+							  "Mobile number": $('#phone').val(),
+							  "Source": $('#source').val()
+						    }
+						  },
+						  "add_tags": [
+						    "Website signup"
+						  ],
+						  "triggers": {
+						    "autoresponse": {
+						      "enabled": true
+						    }
+						  }
+				      }
+				    },
+				    immediate: true,
+				    done: function(data, textStatus, jqXHR) {
+					    console.log('done');
+						fbq('track', 'Lead');
+						ga('send', 'event', 'Signup', 'Converted'); 
+						console.log(submitURL);
+						$.post(submitURL);
+						window.location='https://secure.actblue.com/contribute/page/kedthanks?refcode=homepage';
+				    },
+				    fail: function(jqXHR, textStatus, errorThrown) {
+				      console.log('fail');
+				    },
+				    always: function(data_jqXHR, textStatus, jqXHR_errorThrown) {
+				    	console.log('always');
+				    }
+				  });
 						}
-		});
+			});
 		});
 		$(document).ready(function()
 		{
@@ -98,9 +141,8 @@
 			$("#phone").val(getParameterByName("phone"));
 			$("#email").val(getParameterByName("email"));
 			$("#zip").val(getParameterByName("zip"));
-
-
 		});
+
 	</script>
 </head>
 
@@ -108,7 +150,7 @@
 	<header>
 		<h1><span>#</span>Knock<span>Every</span>Door</h1>
 		<ul>
-			<li><a href="https://actionnetwork.org/event_campaigns/knockeverydoor" target="_blank">Find an Event</a></li>
+			<li><a href="https://map.knockeverydoor.org/" target="_blank">Find an Event</a></li>
 			<li><a href="#faq">FAQ</a></li>
 			<li><a href="https://secure.actblue.com/contribute/page/kedthanks?refcode=homepage">Contribute</a></li>
 			<div class="clear"></div>
@@ -120,7 +162,7 @@
 		<div>
 			<h1 id="title">Join the movement to knock every door and take back our democracy.</h1>
 			<hr align="left">
-			<p id="pitch">We’re launching nationwide, volunteer-led canvasses to organize our communities against Trump. Sign up to canvass where you live and invite your friends to get involved, especially if you live in a county that flipped from Obama in 2012 to Trump in 2016. Once you sign up to canvass, you can read our door knocking guide <a href="https://docs.google.com/document/d/1_gidKOWgGtYDRjNOV0oRjOG4STf-MjVXGXdpiDSAVVM/edit?usp=sharing">here</a> and register for a volunteer orientation call <a href="https://docs.google.com/document/d/1NcxjEoHqwLsYqzogXgtb0N3QWdm9Rd6yN37el0dNxao/edit?usp=sharing">here</a>.</p>
+			<p id="pitch">We’re launching nationwide, volunteer-led canvasses to organize our communities against Trump. Sign up to canvass where you live and invite your friends to get involved, especially if you live in a county that flipped from Obama in 2012 to Trump in 2016. Once you sign up to canvass, you can read our door knocking guide <a href="https://docs.google.com/document/d/1_gidKOWgGtYDRjNOV0oRjOG4STf-MjVXGXdpiDSAVVM/edit?usp=sharing">here</a> and register for a volunteer orientation call <a href="https://docs.google.com/document/d/1NcxjEoHqwLsYqzogXgtb0N3QWdm9Rd6yN37el0dNxao/edit?usp=sharing">here</a>.</p></p>
 			<h3>Signup today to join the effort &rarr;</h3>
 			<div class="clear"></div>
 		</div>
@@ -143,7 +185,9 @@
 			</p>
 		  <div class="clear"></div>
 		</div>
-      <form action method="post" target="no-target" onsubmit="submitted=true;" autocomplete="on">
+		<script type="text/javascript">var submitted=false;</script>
+		<form id="signup-form" action="/" method="post" target="no-target" onsubmit="submitted=true;" autocomplete="on">
+<!--      <form action method="post" target="no-target" onsubmit="submitted=true;" autocomplete="on"> -->
 			<h2>Let's knock some doors!</h2>
 			<p class="error">Please fill out all the form fields correctly.</p>
 			<input name="fname" id="fname" autocomplete="given-name" type="text" placeholder="First name" required>
@@ -152,8 +196,7 @@
 			<input type="email" autocapitalize="off" autocorrect="off" id="email" name="email" placeholder="Email address" autocomplete="email" required />
 			<input type="text" id="zip" name="zip" placeholder="Zip code" inputmode="numeric" pattern="(\d{5}([\-]\d{4})?)" maxlength="5" autocomplete="postal-code" required />
 			<input id="source" name="source" type="hidden" value="">
-			<iframe src="#" id="no-target" name="no-target" style="visibility:hidden;display:none;"      
-onload="if(submitted) {window.location='https://secure.actblue.com/contribute/page/kedthanks?refcode=homepage';}"></iframe>
+			<iframe src="#" id="no-target" name="no-target" style="visibility:hidden;display:none;"></iframe>
 			<input type="submit" id="submit" name="submit" value="Count me in" />
 			<div class="clear"></div>
 		</form>
@@ -280,7 +323,7 @@ https://knockeverydoor.org/?source=shareemail</textarea>
 <div class="faqitem">
 <h3>I have other questions that aren’t answered here. How do I get in touch with you?</h3>
 
-<p>You can email us at team@knockeverydoor.org.</p>
+<p>You can email us at knockeverydoor@gmail.com.</p>
 </div>
 	<div class="clear"></div>
 	</section>
