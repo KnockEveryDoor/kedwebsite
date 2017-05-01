@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Knock Every Door</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<meta name="Description" CONTENT="We’re launching nationwide, volunteer-led canvasses to organize our communities against Trump.">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Join the movement to knock every door and take back our democracy." />
+    <meta property="og:url" content="https://knockeverydoor.org" />
+    <meta property="og:image" content="https://s3.amazonaws.com/knockeverydoor.org/images/social2.png" />
+    <meta property="og:description" content="We’re launching nationwide, volunteer-led canvasses to organize our communities against Trump." />
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@ZackMalitz">
+	<meta name="twitter:creator" content="@ZackMalitz">
+	<meta name="twitter:title" content="Join the movement to knock every door and take back our democracy.">
+	<meta name="twitter:description" content="We’re launching nationwide, volunteer-led canvasses to organize our communities against Trump.">
+	<meta name="twitter:image" content="https://s3.amazonaws.com/knockeverydoor.org/images/social2.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.3.1/jquery.placeholder.min.js"></script>
+	<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '1338370492872008'); // Insert your pixel ID here.
+	fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=1338370492872008&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- DO NOT MODIFY -->
+	<!-- End Facebook Pixel Code -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-83432953-15', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('input').placeholder();
+			$('form').on('submit',function(){
+				var has_empty = false;
+			   $(this).find( 'input[type!="hidden"]' ).each(function () {
+				  if ( ! $(this).val() ) { has_empty = true; return false; }
+			   });
+			   if ( has_empty ) {
+				   $('section#content form .error').show();
+				   return false;
+			   } else {
+					var inputq1 = encodeURIComponent($('#fname').val());
+				   	var inputq2 = encodeURIComponent($('#lname').val());
+				   	var inputq3 = encodeURIComponent($('#phone').val());
+					var inputq4 = encodeURIComponent($('#email').val());
+				   	var inputq5 = encodeURIComponent($('#zip').val());
+					var inputq7 = encodeURIComponent($('#source').val());
+				   var q1ID = "entry.2020702250";
+				   var q2ID = "entry.1509120636";
+				   var q3ID = "entry.434007560";
+					var q4ID = "entry.1631344322";
+					var q5ID = "entry.134615433";
+					var q7ID = "entry.60866946";
+					var baseURL = 'https://docs.google.com/a/middleseat.co/forms/d/e/1FAIpQLSc-hqp-i_fMlWt00aLx7McD7xX3RZSSHKl7W5_ygnrH_vdklA/formResponse?';
+					var submitRef = '&submit=Submit';
+					var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 + "&" + q3ID + "=" + inputq3 +  "&" + q4ID + "=" + inputq4 +  "&" + q5ID + "=" + inputq5 + "&" + q7ID + "=" + inputq7 + submitRef);
+					console.log(submitURL);
+					$(this)[0].action=submitURL;
+						$('.start').hide();
+						$('.error').hide();
+						$('html,body').scrollTop(0);
+				   $('#submit').hide();
+							fbq('track', 'Lead');
+							ga('send', 'event', 'Signup', 'Converted');
+						}
+		});
+		});
+		$(document).ready(function()
+		{
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+				results = regex.exec(location.search);
+				return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			$("#source").val(getParameterByName("source") ? getParameterByName("source") : "homepage");
+			var sourcestring = encodeURIComponent($('#source').val());
+			$("#fname").val(getParameterByName("fname"));
+			$("#lname").val(getParameterByName("lname"));
+			$("#phone").val(getParameterByName("phone"));
+			$("#email").val(getParameterByName("email"));
+			$("#zip").val(getParameterByName("zip"));
+
+
+		});
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1><span>#</span>Knock<span>Every</span>Door</h1>
+		<ul>
+			<li><a href="https://map.knockeverydoor.org/" target="_blank">Find an Event</a></li>
+			<li><a href="#faq">FAQ</a></li>
+			<li><a href="https://secure.actblue.com/contribute/page/kedthanks?refcode=homepage">Contribute</a></li>
+			<div class="clear"></div>
+		</ul>
+		<hr>
+		<div class="clear"></div>
+	</header>
+	<section id="content">
+		<div>
+			<h1 id="title">Join the movement to knock every door and take back our democracy.</h1>
+			<hr align="left">
+			<p id="pitch">We’re launching nationwide, volunteer-led canvasses to organize our communities against Trump. Sign up to canvass where you live and invite your friends to get involved, especially if you live in a county that flipped from Obama in 2012 to Trump in 2016. Once you sign up to canvass, you can read our door knocking guide <a href="https://docs.google.com/document/d/1_gidKOWgGtYDRjNOV0oRjOG4STf-MjVXGXdpiDSAVVM/edit?usp=sharing">here</a> and register for a volunteer orientation call <a href="https://docs.google.com/document/d/1NcxjEoHqwLsYqzogXgtb0N3QWdm9Rd6yN37el0dNxao/edit?usp=sharing">here</a>.</p>
+			<h3>Signup today to join the effort &rarr;</h3>
+			<div class="clear"></div>
+		</div>
+		<div>
+			<h1>Thank you for joining us. Here's what you can do now:</h1>
+			<hr align="left">
+		  <p>
+				<ol>
+					<li><strong>Spread the word on Facebook<span class="nomobile">&nbsp;and send out an email</span>.</strong> For every one person who shares our website, we add an average of three new door knockers to our movement!
+						<a class="mobilelink" href="https://www.facebook.com/sharer/sharer.php?u=https://knockeverydoor.org/?source=sharefb">Post to your Facebook wall &rarr;</a>
+					</li>
+					<li> <a target="_blank" href="https://docs.google.com/a/middleseat.co/forms/d/e/1FAIpQLSenXREvYIm9os4V_T5_Acai1eZwFcjPNzz97QTqz3NH8pn2fA/viewform">Join a special volunteer team.</a> We’re counting on lots of volunteers to take on key roles and do the kind of work that normal organizations only let staff do. </li>
+					<li>
+						<a target="_blank" href="https://secure.actblue.com/contribute/page/knockeverydoor?refcode=homepage">Donate $27 or whatever you can afford to fund this project.</a>
+					</li>
+					<li>
+						<strong>Join a new volunteer call and find out how to get to work.</strong> <a target="_blank" href="https://docs.google.com/document/d/1NcxjEoHqwLsYqzogXgtb0N3QWdm9Rd6yN37el0dNxao/edit?usp=sharing">Click here to see all upcoming calls.</a>
+					</li>
+				</ol>
+			</p>
+		  <div class="clear"></div>
+		</div>
+      <form action method="post" target="no-target" onsubmit="submitted=true;" autocomplete="on">
+			<h2>Let's knock some doors!</h2>
+			<p class="error">Please fill out all the form fields correctly.</p>
+			<input name="fname" id="fname" autocomplete="given-name" type="text" placeholder="First name" required>
+			<input name="lname" id="lname" autocomplete="family-name" type="text" placeholder="Last name" required>
+			<input name="phone" id="phone" autocomplete="tel-national" type="tel" placeholder="Mobile phone" inputmode="numeric" required>
+			<input type="email" autocapitalize="off" autocorrect="off" id="email" name="email" placeholder="Email address" autocomplete="email" required />
+			<input type="text" id="zip" name="zip" placeholder="Zip code" inputmode="numeric" pattern="(\d{5}([\-]\d{4})?)" maxlength="5" autocomplete="postal-code" required />
+			<input id="source" name="source" type="hidden" value="">
+			<iframe src="#" id="no-target" name="no-target" style="visibility:hidden;display:none;"      
+onload="if(submitted) {window.location='https://secure.actblue.com/contribute/page/kedthanks?refcode=homepage';}"></iframe>
+			<input type="submit" id="submit" name="submit" value="Count me in" />
+			<div class="clear"></div>
+		</form>
+		<div>
+			<sidebar class="facebook">
+				<p>Share on Facebook</p>
+				<p>Click the button below to post a link to Facebook:</p>
+				<span class="icon-facebook"></span>
+				<a href="https://www.facebook.com/sharer/sharer.php?u=https://knockeverydoor.org/?source=sharefb"><span class="icon-facebook"></span>Share on Facebook</a>
+			</sidebar>
+		</div>
+		<div>
+			<sidebar class="email">
+				<p>Send an email</p>
+				<p>Click the button below to send an email or copy and paste from the box.</p>
+				<span class="icon-envelop"></span>
+				<a href="mailto:?Subject=Knock%20some%20doors%20with%20me%21&Body=Hey%20I%20just%20signed%20up%20to%20join%20this%20project%20called%20Knock%20Every%20Door.%20We%27re%20launching%20nationwide%2C%20volunteer-led%20canvasses%20to%20organize%20our%20communities%20against%20Trump.%20Want%20to%20join%20me%3F%0A%0Ahttp%3A//knockeverydoor.org/%3Fsource%3Dshareemail"><span class="icon-envelop"></span>Send an email</a>
+				<textarea class="emailtext" onclick="this.focus();this.select()">Subject: Knock some doors with me!
+				
+Hey I just signed up to join this project called Knock Every Door. We're launching nationwide, volunteer-led canvasses to organize our communities against Trump. Want to join me?
+
+https://knockeverydoor.org/?source=shareemail</textarea>
+			</sidebar>
+		</div>
+		<div class="clear"></div>
+	</section>
+	<section id="faq">
+		<h2>Frequently asked questions:</h2>
+		<div class="faqitem">
+<h3>So...what&rsquo;s the plan?</h3>
+
+<p><strong>We’re organizing against Trump and the Republican agenda.</strong></p>
+
+<p><strong>Our goal is to build a massive, grassroots, volunteer-led movement to take our democracy back.</strong> More Americans oppose Trump than support him. By organizing and working together, we can give our voices and our power a multiplier effect. </p>
+
+<p>In the 2016 elections, the Democratic party failed progressives by failing to organize at scale the kind of face-to-face conversations between volunteers and voters that can help identify and persuade the voters we needed to defeat Trump.</p>
+
+<p>Our first step: We’re currently conducting nationwide, door-to-door canvasses to start conversations that should have been happening before the election and that simply can’t wait until 2018. We’re going to listen to voters and non-voters alike, and in the process help organize our communities against Trump. </p>
+
+<p>Many of us are already signing petitions, donating money, and even protesting and going to jail. But we also have to get to work to talk to our neighbors one at a time, knock on every door, and identify who is with us, who we can persuade to join us, and who is definitely on the other side.</p>
+
+<p>As we have conversations with our neighbors, we’ll learn more about why Democratic candidates lost in 2016 – and how we can hone our organizing strategies and tactics to win in the 2018 midterms and in 2020.</p>
+
+<p>Leaders in both parties, along with the media, need to hear what voters all across the country are saying about the challenges they face, whether policies meant to help people are truly improving their daily lives, and what they are looking for in their elected leaders. By talking to voters and focusing on listening and understanding, we’ll be able to communicate the stories, concerns and hopes that the establishment politicians and media either missed or ignored in this past election. At the same time, we’ll be building a huge database of voters, their contact information, and information about whether they’re willing to help us fight Trump. We’ll call those people back or send them a text message and ask them to get involved in other big organizing projects to push Democrats to stand up to Trump, defeat Republicans (and corporate Democrats!) at the ballot box, and, ultimately, crush Trump in 2020.</p>
+
+<p>Note, we’re not the Democratic party and we’re not collecting information on the party’s behalf. We’re concerned volunteers who are getting to work to address some pretty obvious problems with how our electoral democracy is functioning. We hope political leaders and the media come to their senses. But we’re not waiting for someone else to lead. The work starts now and if not by us by whom?</p>
+</div>
+
+<div class="faqitem">
+<h3>That sounds like a lot of work. You must have a whole bunch of money and staff, right?</h3>
+
+<p>No, we have very little of either, but you don&rsquo;t get a political revolution if you don&rsquo;t ask for one! You might have canvassed for a campaign or candidate before, but this is going to be really different. We aren&rsquo;t hiring a bunch of staff or opening offices – we&rsquo;re counting on regular people to take time out of their busy lives and dedicate their time and energy to making this happen.</p>
+
+<p>That might sound crazy, but to those of us with recent memories of millions of people in every corner of the country donating and getting to work as volunteers for Bernie Sanders, we actually think it&rsquo;s pretty grounded in reality.</p>
+
+<p>This is a terrifying political moment, and we&rsquo;ve been hearing from lots of people who have never been involved in politics before who want to join the anti-Trump resistance now. What we&rsquo;ve been hearing from those people is that there aren&rsquo;t a lot of meaningful opportunities to get to work. We&rsquo;re trying to fill that gap.</p>
+</div>
+
+<div class="faqitem">
+<h3>Ok, so we&rsquo;re going to talk to a bunch of people at their doors. What are we going to talk about?</h3>
+
+<p>We want to understand people&rsquo;s lived experience of the election and what motivated them to vote (or not vote), so we&rsquo;re going to have long, open-ended conversations where the people we&rsquo;re canvassing do most of the talking.</p>
+
+<p>That means asking a lot of questions, listening carefully to what we hear, recording as much information as we can in a survey form that we&rsquo;ll provide, and being grateful to the people we talk to for their time – even if we disagree with what they say.</p>
+
+<p>Groundbreaking political science research suggests that long, open-ended conversations like these can actually change people&rsquo;s minds – maybe even Trump supporters. They&rsquo;re also the best way we can think of to get a better understanding of why some Obama voters didn&rsquo;t vote this year or flipped to Trump.</p>
+
+<p>We&rsquo;re hard at work on a comprehensive canvassing training that will include live on-the-phone trainings, recorded webinars, and written guides, so if that sounds confusing now you&rsquo;ll have lots of ways to get prepared before you knock on your first door.</p>
+		</div>
+<div class="faqitem">
+<h3>What are you going to do with all the information volunteers collect? And how does this help us stop Trump?</h3>
+
+<p>Two things. </p>
+
+<ol>
+  <li>
+    <p>When we talk to people at their doors we&rsquo;re going to learn a lot about why people voted the way they did, or why they didn&rsquo;t vote at all. We&rsquo;re going to compile that information in a report, including some suggestions about what Democrats should do if they want to defeat Trump, and share it with the media and Democratic Party leaders. </p>
+  </li>
+  <li>
+    <p>We&rsquo;re going to build a list of people in our communities and especially the counties that flipped from Obama to Trump that will help us win elections in the future. We&rsquo;ll update our lists with people who vote, people who don&rsquo;t vote and people who can&rsquo;t vote. We&rsquo;ll note whether they are with us, need to be persuaded, or are dead set against us. We&rsquo;re especially interested in knowing who wants to volunteer! Along the way we&rsquo;ll get info on the best way to follow up with folks -- like their cell phone numbers and email addresses. </p>
+  </li>
+</ol>
+	</div>
+<div class="faqitem">
+<h3>Awesome. I’m in. What do I do now?</h3>
+
+<p>Sign up to host a local voter contact event! This can be in your neighborhood or a neighborhood in a nearby community that where you believe these conversations need to happen. We&rsquo;ll follow up with you very shortly (days not weeks) to invite you to an training call, and give you instructions on how to choose a location for your canvass, how to recruit people to join you, and everything else you need to know.</p>
+</div>
+
+<div class="faqitem">
+<h3>Great. I’m signed up to canvass. But I want to do MORE! What else can I do to help?</h3>
+
+	<p>As much as you want to! We&rsquo;re counting on lots of volunteers to take on key roles and do the kind of work that normal organizations only let staff to. To learn more about how to get involved as a volunteer for #KnockEveryDoor, <a href="https://docs.google.com/a/middleseat.co/forms/d/e/1FAIpQLSenXREvYIm9os4V_T5_Acai1eZwFcjPNzz97QTqz3NH8pn2fA/viewform">click here</a>.</p>
+
+<p>We&rsquo;re also accepting donations to help us pay for technology costs and a few staffers to get this project off the ground. <a href="https://secure.actblue.com/contribute/page/knockeverydoor?refcode=faq">Click here if you want to donate ($27, perhaps)</a>.</p>
+</div>
+
+<div class="faqitem">
+<h3>Who the heck are you people?</h3>
+
+<p>We&rsquo;re a group of former Bernie staffers, volunteers and supporters. Some of us have been involved in politics for a long time, and some of us were brand new to this when we joined the Bernie campaign. </p>
+
+<p>What we have in common is our belief that grassroots organizing – thousands of volunteer organizers talking to their neighbors – is the only way to fix our country.</p>
+
+<p>Organizers and advisors to #KnockEveryDoor include:</p>
+<ul>
+<li>Becky Bond</li>
+<li>Yong Jung Cho</li>
+<li>Max Cotterill</li>
+<li>Cole Edwards</li>
+<li>Hannah Fertig</li>
+<li>Sam Ghazey</li>
+<li>Ceci Hall</li>
+<li>Lynn Hua</li>
+<li>Zack Malitz</li>
+<li>Kenneth Pennington</li>
+<li>Deborah Sagner</li>
+<li>Hector Sigala</li>
+<li>Larry Stafford Jr.</li>
+<li>Cesar Vargas</li>
+</ul>
+</div>
+
+<div class="faqitem">
+<h3>I have other questions that aren’t answered here. How do I get in touch with you?</h3>
+
+<p>You can email us at team@knockeverydoor.org.</p>
+</div>
+	<div class="clear"></div>
+	</section>
+	<footer>
+		<p>Paid for by Up PAC and not authorized by any candidate or candidate's committee.</p>
+		<a href="privacy-policy/index.html">Privacy Policy</a>
+	</footer>
+</body>
+</html>
