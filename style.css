@@ -327,8 +327,8 @@ section#faq {
     margin: 2em 0; }
 
 footer {
+  padding: 2vw 4vw 0 4vw;
   background-color: #344a7a;
-  font-size: 0.7em;
   text-align: center;
   box-sizing: border-box;
   padding: 3vw;
@@ -344,6 +344,72 @@ footer {
     margin: 0 auto 1em auto; }
   footer a {
     color: #cccccc; }
+    footer ul {
+      float: none;
+      margin: 1em 0 2em 0;
+      text-align: center;
+      width: 100%; }
+    footer ul li {
+      display: inline-block;
+      float: none;
+      padding: 0;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+    footer ul li:last-of-type {
+      font-size: 1em;
+      letter-spacing: normal;
+      font-weight: 500;
+      padding: 0;
+      margin: 0 0 0 1em;
+    }
+    footer ul li:last-of-type a {
+      color: #344a7a;
+      text-decoration: none;
+      background-color: transparent;
+      padding: 0;
+    }
+    footer ul li:last-of-type a:hover {
+      color: #424242;
+      font-weight: 800;
+      cursor: pointer;
+      background-color: transparent;
+      transition: none;
+    }
+
+@media only screen and (max-width: 620px) {
+  footer ul {
+    float: none;
+    margin: 1em 0 2em 0;
+    text-align: center;
+    width: 90%;
+    margin-left: -5%;
+  }
+    footer ul li {
+      display: inline-block;
+      float: none;
+      padding: 0;
+      margin-right: 2%;
+      margin-left: 2%;
+    }
+    footer ul li:last-of-type {
+      font-size: 1em;
+      letter-spacing: normal;
+      font-weight: 500;
+      padding: 0;
+      margin: 0 0 0 1em; }
+      footer ul li:last-of-type a {
+        color: #344a7a;
+        text-decoration: none;
+        background-color: transparent;
+        padding: 0; }
+      footer ul li:last-of-type a:hover {
+        color: #424242;
+        font-weight: 800;
+        cursor: pointer;
+        background-color: transparent;
+        transition: none; }
+
 
 @media only screen and (max-width: 1029px) {
   html, body {
