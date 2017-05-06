@@ -17,23 +17,23 @@ var nav = '<a href="/"><h1><span>#</span>Knock<span>Every</span>Door</h1></a> \
   <li> \
     <a href="/how-it-works/index.html">How it works</a> \
     <ul class="fallback"> \
-      <li><a href="#">How it works</a></li> \
-      <li><a href="#">Deep canvassing 101</a></li> \
+      <li><a href="/how-it-works/index.html">How it works</a></li> \
+      <li><a href="/how-it-works/deep-canvassing-101.html">Deep canvassing 101</a></li> \
     </ul> \
   </li> \
   <li> \
     <a href="/get-started/index.html">Get started</a> \
     <ul class="fallback"> \
-      <li><a href="#">Upcoming Calls</a></li> \
-      <li><a href="#">Resources</a></li> \
+      <li><a href="/get-started/upcoming-calls.html">Upcoming Calls</a></li> \
+      <li><a href="/get-started/resources.html">Resources</a></li> \
     </ul> \
   </li> \
   <li><a href="https://actionnetwork.org/event_campaigns/knockeverydoor" target="_blank">Find an Event</a></li> \
   <li> \
     <a href="/press/index.html">Press</a> \
     <ul class="fallback"> \
-      <li><a href="#">News Coverage</a></li> \
-      <li><a href="#">Press Inquiries</a></li> \
+      <li><a href="/press/news-coverage.html">News Coverage</a></li> \
+      <li><a href="/press/inquiries.html">Press Inquiries</a></li> \
     </ul> \
   </li> \
   <li><a href="https://secure.actblue.com/contribute/page/kedthanks?refcode=homepage" class="donate">DONATE</a></li> \
