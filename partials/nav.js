@@ -24,16 +24,16 @@ var nav = '<a href="/"><h1><span>#</span>Knock<span>Every</span>Door</h1></a> \
   <li> \
     <a href="/get-started/index.html">Get started</a> \
     <ul class="fallback"> \
-      <li><a href="/get-started/upcoming-calls.html">Upcoming Calls</a></li> \
-      <li><a href="/get-started/resources.html">Resources</a></li> \
+      <li><a href="/get-started/index.html">Upcoming Calls</a></li> \
+      <li><a href="/get-started/index.html">Resources</a></li> \
     </ul> \
   </li> \
   <li><a href="https://actionnetwork.org/event_campaigns/knockeverydoor" target="_blank">Find an Event</a></li> \
   <li> \
     <a href="/press/index.html">Press</a> \
     <ul class="fallback"> \
-      <li><a href="/press/news-coverage.html">News Coverage</a></li> \
-      <li><a href="/press/inquiries.html">Press Inquiries</a></li> \
+      <li><a href="/press/index.html">News Coverage</a></li> \
+      <li><a href="/press/index.html#inquiries">Press Inquiries</a></li> \
     </ul> \
   </li> \
   <li><a href="https://secure.actblue.com/contribute/page/kedthanks?refcode=homepage" class="donate">DONATE</a></li> \
