@@ -47,63 +47,6 @@
 	  ga('send', 'pageview');
 
 	</script>
-	<script>
-		$(document).ready(function(){
-			$('input').placeholder();
-			$('form').on('submit',function(){
-				var has_empty = false;
-			   $(this).find( 'input[type!="hidden"]' ).each(function () {
-				  if ( ! $(this).val() ) { has_empty = true; return false; }
-			   });
-			   if ( has_empty ) {
-				   $('section#content form .error').show();
-				   return false;
-			   } else {
-					var inputq1 = encodeURIComponent($('#fname').val());
-				   	var inputq2 = encodeURIComponent($('#lname').val());
-				   	var inputq3 = encodeURIComponent($('#phone').val());
-					var inputq4 = encodeURIComponent($('#email').val());
-				   	var inputq5 = encodeURIComponent($('#zip').val());
-					var inputq7 = encodeURIComponent($('#source').val());
-				   var q1ID = "entry.2020702250";
-				   var q2ID = "entry.1509120636";
-				   var q3ID = "entry.434007560";
-					var q4ID = "entry.1631344322";
-					var q5ID = "entry.134615433";
-					var q7ID = "entry.60866946";
-					var baseURL = 'https://docs.google.com/a/middleseat.co/forms/d/e/1FAIpQLSc-hqp-i_fMlWt00aLx7McD7xX3RZSSHKl7W5_ygnrH_vdklA/formResponse?';
-					var submitRef = '&submit=Submit';
-					var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 + "&" + q3ID + "=" + inputq3 +  "&" + q4ID + "=" + inputq4 +  "&" + q5ID + "=" + inputq5 + "&" + q7ID + "=" + inputq7 + submitRef);
-					console.log(submitURL);
-					$(this)[0].action=submitURL;
-						$('.start').hide();
-						$('.error').hide();
-						$('html,body').scrollTop(0);
-				   $('#submit').hide();
-							fbq('track', 'Lead');
-							ga('send', 'event', 'Signup', 'Converted');
-						}
-		});
-		});
-		$(document).ready(function()
-		{
-			function getParameterByName(name) {
-				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-				results = regex.exec(location.search);
-				return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-			}
-			$("#source").val(getParameterByName("source") ? getParameterByName("source") : "homepage");
-			var sourcestring = encodeURIComponent($('#source').val());
-			$("#fname").val(getParameterByName("fname"));
-			$("#lname").val(getParameterByName("lname"));
-			$("#phone").val(getParameterByName("phone"));
-			$("#email").val(getParameterByName("email"));
-			$("#zip").val(getParameterByName("zip"));
-
-
-		});
-	</script>
 </head>
 
 <body>
