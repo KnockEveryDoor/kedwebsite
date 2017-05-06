@@ -8,10 +8,10 @@ var nav = '<a href="/"><h1><span>#</span>Knock<span>Every</span>Door</h1></a> \
   <li> \
     <a href="/about/index.html">About</a> \
     <ul class="fallback"> \
-      <li><a href="#">What is Knock Every Door?</a></li> \
-      <li><a href="#">Our Team</a></li> \
-      <li><a href="#">FAQ</a></li> \
-      <li><a href="#">Contact Us</a></li> \
+      <li><a href="/about/what-is-knock-every-door.html">What is Knock Every Door?</a></li> \
+      <li><a href="/about/our-team.html">Our Team</a></li> \
+      <li><a href="/about/faq.html">FAQ</a></li> \
+      <li><a href="/about/contact-us.html">Contact Us</a></li> \
     </ul> \
   </li> \
   <li> \
