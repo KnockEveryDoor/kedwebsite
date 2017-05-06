@@ -10,7 +10,7 @@ var nav = '<a href="/"><h1><span>#</span>Knock<span>Every</span>Door</h1></a> \
     <ul class="fallback"> \
       <li><a href="/about/index.html#what">What is Knock Every Door?</a></li> \
       <li><a href="/about/index.html#team">Our Team</a></li> \
-      <li><a href="/about/index.html#what">FAQ</a></li> \
+      <li><a href="/about/index.html#faq">FAQ</a></li> \
       <li><a href="/about/index.html#contact">Contact Us</a></li> \
     </ul> \
   </li> \
