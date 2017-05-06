@@ -121,6 +121,13 @@ header {
         transition: 500ms;
         cursor: pointer; }
 
+header ul li ul {position:absolute;width:210px;background:#FFF;}
+header ul li ul li {width:210px;}
+header ul li ul li a {display:block; color:#444;}
+header ul li ul li:hover a {background:#F7F7F7;}
+header ul li ul.fallback {display:none;}
+header ul li:hover ul.fallback {display:block;}
+
 section#content {
   padding: 4vw 4vw 2vw 4vw;
   text-align: left; }
