@@ -103,6 +103,7 @@ header {
         text-decoration: none; }
       header ul li a:hover {
         color: #424242;
+        /*font-weight: 800;*/
         cursor: pointer; }
     .donate {
       font-size: 0.8em;
@@ -377,6 +378,7 @@ footer {
     }
     footer ul li:last-of-type a:hover {
       color: #424242;
+      /*font-weight: 800;*/
       cursor: pointer;
       background-color: transparent;
       transition: none;
@@ -410,6 +412,7 @@ footer {
         padding: 0; }
       footer ul li:last-of-type a:hover {
         color: #424242;
+        /*font-weight: 800;*/
         cursor: pointer;
         background-color: transparent;
         transition: none; }
