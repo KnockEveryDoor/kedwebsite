@@ -47,85 +47,16 @@
 	  ga('send', 'pageview');
 
 	</script>
-	<script>
-		$(document).ready(function(){
-			$('input').placeholder();
-			$('form').on('submit',function(){
-				var has_empty = false;
-			   $(this).find( 'input[type!="hidden"]' ).each(function () {
-				  if ( ! $(this).val() ) { has_empty = true; return false; }
-			   });
-			   if ( has_empty ) {
-				   $('section#content form .error').show();
-				   return false;
-			   } else {
-					var inputq1 = encodeURIComponent($('#fname').val());
-				   	var inputq2 = encodeURIComponent($('#lname').val());
-				   	var inputq3 = encodeURIComponent($('#phone').val());
-					var inputq4 = encodeURIComponent($('#email').val());
-				   	var inputq5 = encodeURIComponent($('#zip').val());
-					var inputq7 = encodeURIComponent($('#source').val());
-				   var q1ID = "entry.2020702250";
-				   var q2ID = "entry.1509120636";
-				   var q3ID = "entry.434007560";
-					var q4ID = "entry.1631344322";
-					var q5ID = "entry.134615433";
-					var q7ID = "entry.60866946";
-					var baseURL = 'https://docs.google.com/a/middleseat.co/forms/d/e/1FAIpQLSc-hqp-i_fMlWt00aLx7McD7xX3RZSSHKl7W5_ygnrH_vdklA/formResponse?';
-					var submitRef = '&submit=Submit';
-					var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 + "&" + q3ID + "=" + inputq3 +  "&" + q4ID + "=" + inputq4 +  "&" + q5ID + "=" + inputq5 + "&" + q7ID + "=" + inputq7 + submitRef);
-					console.log(submitURL);
-					$(this)[0].action=submitURL;
-						$('.start').hide();
-						$('.error').hide();
-						$('html,body').scrollTop(0);
-				   $('#submit').hide();
-							fbq('track', 'Lead');
-							ga('send', 'event', 'Signup', 'Converted');
-						}
-		});
-		});
-		$(document).ready(function()
-		{
-			function getParameterByName(name) {
-				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-				results = regex.exec(location.search);
-				return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-			}
-			$("#source").val(getParameterByName("source") ? getParameterByName("source") : "homepage");
-			var sourcestring = encodeURIComponent($('#source').val());
-			$("#fname").val(getParameterByName("fname"));
-			$("#lname").val(getParameterByName("lname"));
-			$("#phone").val(getParameterByName("phone"));
-			$("#email").val(getParameterByName("email"));
-			$("#zip").val(getParameterByName("zip"));
-
-
-		});
-	</script>
 </head>
 
 <body>
 	<header class="nav">
 	</header>
-
-	<section id="faq">
-    <div class="faqitem">
-			<h3>Awesome. I’m in. What do I do now?</h3>
-
-			<p>Sign up to host a canvass! This can be in your neighborhood or a neighborhood in a nearby community that where you believe these conversations need to happen. We’ll follow up with you very shortly (days not weeks) to invite you to an training call, and give you instructions on how to choose a location for your canvass, how to recruit people to join you, and everything else you need to know.</p>
-
-			<p>If you’re representing a local group, only the canvass hosts need to be on our intro call– they will receive all the information necessary to hold a canvass with your group. If you represent a national group and want to partner with us, email us at team@knockeverydoor.org.</p>
-		</div>
-		<div class="faqitem">
-			<h3>Great. I’m signed up to canvass. But I want to do MORE! What else can I do to help?</h3>
-
-			<p>Lots! We’re counting on lots of volunteers to take on key roles and do the kind of work that normal organizations only let staff to. To learn more about joining a special volunteer team and sign up, <a href="https://goo.gl/forms/V5MFiPCkX62jmW6p1">click here</a>.</p>
-
-			<p>We’re also accepting donations to help us pay for technology costs and a few staffers to help scale this project up. <a href="https://secure.actblue.com/contribute/page/kedthanks?refcode=about">Click here if you want to donate ($27, perhaps).</a></p>
-		</div>
-		<div class="clear"></div>
+	<span id="resources" class="anchor"></span>
+	<section class="tabcontent">
+	  <div>
+		<h2>Coming Soon!</h2>
+	  </div>
 	</section>
 	<footer>
     <ul>
@@ -138,7 +69,7 @@
       <div class="clear"></div>
     </ul>
 		<p>Paid for by Up PAC and not authorized by any candidate or candidate's committee.</p>
-		<a href="privacy-policy/index.html">Privacy Policy</a>
+		<p><a href="privacy-policy/index.html">Privacy Policy</a></p>
 	</footer>
 </body>
 </html>
