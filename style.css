@@ -162,7 +162,7 @@ section#content {
       height: 0.2vw;
       background-color: #424242;
       border: 0;
-      margin: 0; }
+      margin: 1.3em 0; }
     section#content div:first-of-type p, section#content div:nth-of-type(2) p {
       line-height: 1.75em;
       margin: 0 0 1.8em 0;
