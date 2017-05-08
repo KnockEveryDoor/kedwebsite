@@ -66,7 +66,13 @@ header {
   padding: 2vw 4vw 0 4vw;
   box-sizing: border-box;
   width: 100%;
+  height: 85px;
   color: #424242;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 9999;
+  background-color: #FFF;
   margin: 0 0 0 0; }
   header h1 {
     margin: 0;
@@ -88,7 +94,7 @@ header {
     float: right;
     list-style: none;
     margin: 0;
-    font-size: 1em;
+    font-size: .9em;
     font-weight: 500;
     text-transform: uppercase;
     color: #344a7a; }
@@ -96,33 +102,47 @@ header {
       display: table-cell;
       vertical-align: middle;
       float: left;
-      padding: 0.8em 0 0 0.8em;
+      padding: 0.8em 0 0 1.5em;
       box-sizing: border-box; }
       header ul li a {
         color: #344a7a;
         text-decoration: none; }
       header ul li a:hover {
-        color: #424242;
-        font-weight: 800;
+        color: #ef5354;
+        /*font-weight: 800;*/
         cursor: pointer; }
-    header ul li:last-of-type {
+    .donate {
       font-size: 0.8em;
       margin-left: 1em;
       margin-top: 0.3em;
       font-weight: bold;
-      letter-spacing: 0.12em; }
-      header ul li:last-of-type a {
-        color: #FFF;
-        text-decoration: none;
-        padding: 1em 3em;
-        background-color: #ef5354; }
-      header ul li:last-of-type :hover {
+      letter-spacing: 0.12em; 
+      color: #FFF;
+      text-decoration: none;
+      padding: 1em 3em;
+      background-color: #ef5354; }
+      .donate:hover{
         background-color: #eb2426;
+        color: #FFF;
         transition: 500ms;
         cursor: pointer; }
 
+header ul li ul {position:absolute;width:250px;}
+header ul li ul li {width:100%; margin-left: -1.5em; background-color: #FFF; padding-top: 0.4em; padding-bottom: 0.4em; }
+header ul li ul li:first-of-type { margin-top: 1em;}
+header ul li ul li a {display:block; color:#344a7a;}
+header ul li ul li:hover {background:#F7F7F7;}
+header ul li ul.fallback {display:none;}
+header ul li:hover ul.fallback {display:block;}
+
+.anchor {
+  margin: -85px 0px 85px 0px; 
+  position: absolute; 
+  visibility: hidden; 
+  display: block; }
+
 section#content {
-  padding: 4vw 4vw 2vw 4vw;
+  padding: 8vw 4vw 2vw 4vw;
   text-align: left; }
   section#content div:nth-of-type(2) {
     display: none; }
@@ -142,7 +162,7 @@ section#content {
       height: 0.2vw;
       background-color: #424242;
       border: 0;
-      margin: 1.3em 0; }
+      margin: 0; }
     section#content div:first-of-type p, section#content div:nth-of-type(2) p {
       line-height: 1.75em;
       margin: 0 0 1.8em 0;
@@ -311,28 +331,43 @@ section#content {
       max-width: 100%;
       font-weight: 300; }
 
-section#faq {
-  background-color: #f0f0f0;
-  box-sizing: border-box;
-  padding: 3em 3em 3em 3em;
-  margin-top: 2em; }
-  section#faq h2 {
-    font-family: "Merriweather", serif;
-    font-size: 1.8em;
-    margin: 0;
-    font-weight: normal; }
-  section#faq div.faqitem {
+section.tabcontent {
+  padding: 2vw 4vw 2vw 4vw;
+  text-align: left;
+  line-height: 1.75em;
+  margin: 0;
+  font-size: 1em;
+  color: #424242; }
+    section.tabcontent:first-of-type {
+      padding-top: 85px; } /* push it down to fit the nav bar */
+    section.tabcontent:nth-of-type(even) {
+      background-color: #f0f0f0; }
+    section.tabcontent h1 {
+      font-family: "Merriweather", serif;
+      font-size: 1.78em;
+      font-weight: normal; }
+    section.tabcontent h2 {
+      font-family: "Merriweather", serif;
+      font-size: 1.8em;
+      font-weight: normal; 
+      color: #344a7a; }
+
+  div.faqitem {
     box-sizing: border-box;
     color: #424242;
     margin: 2em 0; }
 
 footer {
+  padding: 2vw 4vw 0 4vw;
   background-color: #344a7a;
-  font-size: 0.7em;
   text-align: center;
+  font-size: .9em;
+  text-transform: uppercase;
   box-sizing: border-box;
   padding: 3vw;
   color: #FFF; }
+  footer p {
+    font-size: 0.8em; }
   footer p:first-of-type {
     width: 95%;
     max-width: 450px;
@@ -343,7 +378,76 @@ footer {
     padding: 1em 2em;
     margin: 0 auto 1em auto; }
   footer a {
-    color: #cccccc; }
+    color: #cccccc; 
+    text-decoration: none; }
+  footer a:hover {
+    color: #ef5354;
+  }
+    footer ul {
+      float: none;
+      margin: 1em 0 2em 0;
+      text-align: center;
+      width: 100%; }
+    footer ul li {
+      display: inline-block;
+      float: none;
+      padding: 0;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+    footer ul li:last-of-type {
+      letter-spacing: normal;
+      font-weight: 500;
+      padding: 0;
+      margin: 0 0 0 1em;
+    }
+    footer ul li:last-of-type a {
+      color: #344a7a;
+      text-decoration: none;
+      background-color: transparent;
+      padding: 0;
+    }
+    footer ul li:last-of-type a:hover {
+      color: #424242;
+      /*font-weight: 800;*/
+      cursor: pointer;
+      background-color: transparent;
+      transition: none;
+    }
+
+@media only screen and (max-width: 620px) {
+  footer ul {
+    float: none;
+    margin: 1em 0 2em 0;
+    text-align: center;
+    width: 90%;
+    margin-left: -5%;
+  }
+    footer ul li {
+      display: inline-block;
+      float: none;
+      padding: 0;
+      margin-right: 2%;
+      margin-left: 2%;
+    }
+    footer ul li:last-of-type {
+      font-size: 1em;
+      letter-spacing: normal;
+      font-weight: 500;
+      padding: 0;
+      margin: 0 0 0 1em; }
+      footer ul li:last-of-type a {
+        color: #344a7a;
+        text-decoration: none;
+        background-color: transparent;
+        padding: 0; }
+      footer ul li:last-of-type a:hover {
+        color: #424242;
+        /*font-weight: 800;*/
+        cursor: pointer;
+        background-color: transparent;
+        transition: none; }
+
 
 @media only screen and (max-width: 1029px) {
   html, body {
@@ -389,44 +493,52 @@ footer {
       float: right; } }
 @media only screen and (max-width: 620px) {
   header {
-    text-align: center; }
+    text-align: center;
+    height: 110px; }
     header h1 {
       float: none; }
+    header a {
+      text-decoration: none; }
     header hr {
       width: 100%;
       background-color: #c2c2c2;
       border: 0;
       height: 2px;
+      margin: 0;
       float: none;
       clear: both;
       display: block; }
     header ul {
       float: none;
-      margin: 1em 0 2em 0;
+      margin: .8em 0 .8em 0;
       text-align: center;
       width: 100%; }
       header ul li {
         display: inline-block;
         float: none;
-        padding: 0; }
-      header ul li:last-of-type {
-        font-size: 1em;
-        letter-spacing: normal;
-        font-weight: 500;
-        padding: 0;
-        margin: 0 0 0 1em; }
+        line-height: 1.4em;
+        padding: 0 1em; }
         header ul li:last-of-type a {
-          color: #344a7a;
+          color: #ef5354;
           text-decoration: none;
           background-color: transparent;
           padding: 0; }
         header ul li:last-of-type a:hover {
           color: #424242;
-          font-weight: 800;
           cursor: pointer;
           background-color: transparent;
           transition: none; }
+        header ul li:hover ul.fallback {display:none;} /* don't display dropdown menu on small screens */
 
+  .anchor {
+    margin: -110px 0px 110px 0px; 
+    position: absolute; 
+    visibility: hidden; 
+    display: block; }
+  section.tabcontent:first-of-type {
+    padding-top: 110px; }
+  section#content {
+    padding-top: 110px;  }
   section#content div:first-of-type {
     text-align: center; }
     section#content div:first-of-type hr {
