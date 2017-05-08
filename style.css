@@ -318,8 +318,29 @@ section#content {
       max-width: 100%;
       font-weight: 300; }
 
+section.tabcontent {
+  padding: 4vw;
+  text-align: left;
+  line-height: 1.75em;
+  margin: 0;
+  font-size: 1em;
+  color: #424242; }
+    section.tabcontent:nth-of-type(even) {
+      background-color: #f0f0f0;
+    }
+    section.tabcontent h1 {
+      font-family: "Merriweather", serif;
+      margin: 0;
+      font-size: 1.78em;
+      font-weight: normal; }
+    section.tabcontent h2 {
+      font-family: "Merriweather", serif;
+      font-size: 1.8em;
+      margin: 0;
+      font-weight: normal; 
+      color: #344a7a; }
+
 section#faq {
-  background-color: #f0f0f0;
   box-sizing: border-box;
   padding: 3em 3em 3em 3em;
   margin-top: 2em; }
