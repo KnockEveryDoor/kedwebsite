@@ -127,7 +127,7 @@ header {
         transition: 500ms;
         cursor: pointer; }
 
-header ul li ul {position:absolute;width:250px;}
+header ul li ul {position:absolute;width:18em;}
 header ul li ul li {width:100%; margin-left: -1.5em; background-color: #FFF; padding-top: 0.4em; padding-bottom: 0.4em; }
 header ul li ul li:first-of-type { margin-top: 1em;}
 header ul li ul li a {display:block; color:#344a7a;}
@@ -358,13 +358,12 @@ section.tabcontent {
     margin: 2em 0; }
 
 footer {
-  padding: 2vw 4vw 0 4vw;
+  padding: 2vw 4vw;
   background-color: #344a7a;
   text-align: center;
   font-size: .9em;
   text-transform: uppercase;
   box-sizing: border-box;
-  padding: 3vw;
   color: #FFF; }
   footer p {
     font-size: 0.8em; }
@@ -383,79 +382,55 @@ footer {
   footer a:hover {
     color: #ef5354;
   }
-    footer ul {
-      float: none;
-      margin: 1em 0 2em 0;
-      text-align: center;
-      width: 100%; }
-    footer ul li {
-      display: inline-block;
-      float: none;
-      padding: 0;
-      margin-left: 5%;
-      margin-right: 5%;
-    }
-    footer ul li:last-of-type {
-      letter-spacing: normal;
-      font-weight: 500;
-      padding: 0;
-      margin: 0 0 0 1em;
-    }
-    footer ul li:last-of-type a {
-      color: #344a7a;
-      text-decoration: none;
-      background-color: transparent;
-      padding: 0;
-    }
-    footer ul li:last-of-type a:hover {
-      color: #424242;
-      /*font-weight: 800;*/
-      cursor: pointer;
-      background-color: transparent;
-      transition: none;
-    }
-
-@media only screen and (max-width: 620px) {
   footer ul {
     float: none;
     margin: 1em 0 2em 0;
-    text-align: center;
-    width: 90%;
-    margin-left: -5%;
+    text-align: center; 
+    margin-left: -5%;}
+  footer ul li {
+    display: inline-block;
+    float: none;
+    padding: 0;
+    margin: auto 2em; }
+  footer ul li:last-of-type a {
+    color: #ef5354;
+    text-decoration: none;
   }
-    footer ul li {
-      display: inline-block;
-      float: none;
-      padding: 0;
-      margin-right: 2%;
-      margin-left: 2%;
-    }
-    footer ul li:last-of-type {
-      font-size: 1em;
-      letter-spacing: normal;
-      font-weight: 500;
-      padding: 0;
-      margin: 0 0 0 1em; }
-      footer ul li:last-of-type a {
-        color: #344a7a;
-        text-decoration: none;
-        background-color: transparent;
-        padding: 0; }
-      footer ul li:last-of-type a:hover {
-        color: #424242;
-        /*font-weight: 800;*/
-        cursor: pointer;
-        background-color: transparent;
-        transition: none; }
+  footer ul li:last-of-type a:hover {
+    color: #FFF;
+  }
 
-
-@media only screen and (max-width: 1029px) {
+@media only screen and (max-width: 1169px) {
   html, body {
-    font-size: 16px; } }
-@media only screen and (max-width: 969px) {
+    font-size: 16px; }
+}
+@media only screen and (max-width: 1097px) {
+  header ul { font-size: 0.85em; }
+  header ul li { padding-left: 1.2em;} 
+}
+@media only screen and (max-width: 1056px) {
+  header ul { font-size: 0.8em;}
+  header ul li { padding-left: 1em;} 
+  header {
+    height: 65px; }
+  .anchor {
+    margin: -65px 0px 65px 0px; }
+  section.tabcontent:first-of-type, section#content {
+    padding-top: 65px; }
+}
+@media only screen and (max-width: 972px) {
   html, body {
-    font-size: 15px; } }
-@media only screen and (max-width: 908px) {
+    font-size: 15px; } 
+}
+@media only screen and (max-width: 910px) {
+  header {
+    height: 95px; }
+  .anchor {
+    margin: -95px 0px 95px 0px; }
+  section.tabcontent:first-of-type, section#content {
+    padding-top: 95px; }
+}
+@media only screen and (max-width: 910px) {
   section#content div:first-of-type {
     float: none;
     clear: both;
@@ -490,8 +465,14 @@ footer {
       float: left; }
     section#content form input:nth-of-type(5) {
       width: 49.5%;
-      float: right; } }
-@media only screen and (max-width: 620px) {
+      float: right; } 
+  footer ul li {
+    margin: auto 1em;
+    line-height: 1.5em;
+    font-size: 0.8em; }
+}
+
+@media only screen and (max-width: 624px) {
   header {
     text-align: center;
     height: 110px; }
@@ -531,10 +512,7 @@ footer {
         header ul li:hover ul.fallback {display:none;} /* don't display dropdown menu on small screens */
 
   .anchor {
-    margin: -110px 0px 110px 0px; 
-    position: absolute; 
-    visibility: hidden; 
-    display: block; }
+    margin: -110px 0px 110px 0px; }
   section.tabcontent:first-of-type {
     padding-top: 110px; }
   section#content {
@@ -557,4 +535,16 @@ footer {
     text-align: center; }
     section#content form input {
       width: 100% !important;
-      margin: 0 0 0.5em 0 !important; } }
+      margin: 0 0 0.5em 0 !important; }
+  footer ul {
+    float: none;
+    margin: 1em 0 2em 0;
+    text-align: center;
+    margin-left: -10%; }
+    footer ul li {
+      display: inline-block;
+      float: none;
+      padding: 0;
+      line-height: 1.5em; }
+}
+
