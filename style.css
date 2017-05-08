@@ -386,7 +386,7 @@ footer {
     float: none;
     margin: 1em 0 2em 0;
     text-align: center; 
-    margin-left: -5%;}
+    margin-left: -40px;}
   footer ul li {
     display: inline-block;
     float: none;
@@ -540,7 +540,7 @@ footer {
     float: none;
     margin: 1em 0 2em 0;
     text-align: center;
-    margin-left: -10%; }
+    margin-left: -40px; }
     footer ul li {
       display: inline-block;
       float: none;
