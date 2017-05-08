@@ -111,18 +111,18 @@ header {
       margin-top: 0.3em;
       font-weight: bold;
       letter-spacing: 0.12em; 
-        color: #FFF;
-        text-decoration: none;
-        padding: 1em 3em;
-        background-color: #ef5354; }
+      color: #FFF;
+      text-decoration: none;
+      padding: 1em 3em;
+      background-color: #ef5354; }
       .donate:hover{
         background-color: #eb2426;
         color: #FFF;
         transition: 500ms;
         cursor: pointer; }
 
-header ul li ul {position:absolute;width:210px;}
-header ul li ul li {width:210px; padding-left:0; background-color: #FFF;}
+header ul li ul {position:absolute;min-width:100px;}
+header ul li ul li {width:100%; padding-left:0; background-color: #FFF;}
 header ul li ul li a {display:block; color:#344a7a;}
 header ul li ul.fallback {display:none;}
 header ul li:hover ul.fallback {display:block;}
@@ -339,16 +339,7 @@ section.tabcontent {
       font-weight: normal; 
       color: #344a7a; }
 
-section#faq {
-  box-sizing: border-box;
-  padding: 3em 3em 3em 3em;
-  margin-top: 2em; }
-  section#faq h2 {
-    font-family: "Merriweather", serif;
-    font-size: 1.8em;
-    margin: 0;
-    font-weight: normal; }
-  section#faq div.faqitem {
+  div.faqitem {
     box-sizing: border-box;
     color: #424242;
     margin: 2em 0; }
@@ -492,6 +483,8 @@ footer {
     text-align: center; }
     header h1 {
       float: none; }
+    header a {
+      text-decoration: none; }
     header hr {
       width: 100%;
       background-color: #c2c2c2;
@@ -508,15 +501,9 @@ footer {
       header ul li {
         display: inline-block;
         float: none;
-        padding: 0; }
-      header ul li:last-of-type {
-        font-size: 1em;
-        letter-spacing: normal;
-        font-weight: 500;
-        padding: 0;
-        margin: 0 0 0 1em; }
+        padding: 0 1em; }
         header ul li:last-of-type a {
-          color: #344a7a;
+          color: #ef5354;
           text-decoration: none;
           background-color: transparent;
           padding: 0; }
@@ -525,6 +512,7 @@ footer {
           cursor: pointer;
           background-color: transparent;
           transition: none; }
+        header ul li:hover ul.fallback {display:none;} /* don't display dropdown menu on small screens */
 
   section#content div:first-of-type {
     text-align: center; }
