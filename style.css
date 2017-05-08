@@ -88,7 +88,7 @@ header {
     float: right;
     list-style: none;
     margin: 0;
-    font-size: 1em;
+    font-size: .9em;
     font-weight: 500;
     text-transform: uppercase;
     color: #344a7a; }
@@ -96,13 +96,13 @@ header {
       display: table-cell;
       vertical-align: middle;
       float: left;
-      padding: 0.8em 0 0 0.8em;
+      padding: 0.8em 0 0 1.5em;
       box-sizing: border-box; }
       header ul li a {
         color: #344a7a;
         text-decoration: none; }
       header ul li a:hover {
-        color: #424242;
+        color: #ef5354;
         /*font-weight: 800;*/
         cursor: pointer; }
     .donate {
@@ -110,21 +110,20 @@ header {
       margin-left: 1em;
       margin-top: 0.3em;
       font-weight: bold;
-      letter-spacing: 0.12em; }
-      .donate {
+      letter-spacing: 0.12em; 
         color: #FFF;
         text-decoration: none;
         padding: 1em 3em;
         background-color: #ef5354; }
-      .donate {
+      .donate:hover{
         background-color: #eb2426;
+        color: #FFF;
         transition: 500ms;
         cursor: pointer; }
 
-header ul li ul {position:absolute;width:210px;background:#FFF;}
-header ul li ul li {width:210px;}
-header ul li ul li a {display:block; color:#444;}
-header ul li ul li:hover a {background:#F7F7F7;}
+header ul li ul {position:absolute;width:210px;}
+header ul li ul li {width:210px; padding-left:0; background-color: #FFF;}
+header ul li ul li a {display:block; color:#344a7a;}
 header ul li ul.fallback {display:none;}
 header ul li:hover ul.fallback {display:block;}
 
@@ -358,9 +357,13 @@ footer {
   padding: 2vw 4vw 0 4vw;
   background-color: #344a7a;
   text-align: center;
+  font-size: .9em;
+  text-transform: uppercase;
   box-sizing: border-box;
   padding: 3vw;
   color: #FFF; }
+  footer p {
+    font-size: 0.8em; }
   footer p:first-of-type {
     width: 95%;
     max-width: 450px;
@@ -371,7 +374,11 @@ footer {
     padding: 1em 2em;
     margin: 0 auto 1em auto; }
   footer a {
-    color: #cccccc; }
+    color: #cccccc; 
+    text-decoration: none; }
+  footer a:hover {
+    color: #ef5354;
+  }
     footer ul {
       float: none;
       margin: 1em 0 2em 0;
@@ -385,7 +392,6 @@ footer {
       margin-right: 5%;
     }
     footer ul li:last-of-type {
-      font-size: 1em;
       letter-spacing: normal;
       font-weight: 500;
       padding: 0;
